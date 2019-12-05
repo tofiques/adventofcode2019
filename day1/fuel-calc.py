@@ -11,12 +11,12 @@ def calculate_fuel(x):
 
 
 def calc_part_two(mass,total=0):
-
     added_fuel = calculate_fuel(mass)
     total += added_fuel
     if (calculate_fuel(added_fuel)-2) > 0:
         return calc_part_two(mass=added_fuel, total=total)
     return total
+
 
 part_one = map(calculate_fuel, lines)
 part_two = map(calc_part_two, lines)
